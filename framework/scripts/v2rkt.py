@@ -15,7 +15,7 @@ if __name__ == "__main__":
   print("[command to run]: ", command)
   os.system(command)
 
-  command = "rm src/tiny_cpu.smt2"
-  print("[command to run]: ", command)
-  os.system(command)
+  # command = "rm src/tiny_cpu.smt2"
+  # print("[command to run]: ", command)
+  # os.system(command)
 

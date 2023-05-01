@@ -12,6 +12,8 @@
 
 ; We define a structure named impl
 ; whose only field saves the state of our tiny_cpu
+; `#:mutable #:transparent` states you can use functions
+; like set-impl-tiny_cpu! to update it
 (struct impl (tiny_cpu) #:mutable #:transparent)
 
 
@@ -23,7 +25,7 @@
   ; STEP: initialize a new tiny_cpu whose states are all zeros
   (define tiny_cpu (new-zeroed-tiny_cpu_s))
   
-  ; STEP: pull up the the reset signal and advance cpu state to next cycle
+  ; STEP: pull up the reset signal and advance cpu state to the next cycle
   (set! tiny_cpu (step (with-input tiny_cpu (input* 'rst #t))))
 
   ; STEP: overide the instruction memory inside tiny_cpu with imem vector
